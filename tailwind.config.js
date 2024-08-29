@@ -1,0 +1,31 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: "selector",
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Quicksand', 'sans-serif'],
+      },
+      keyframes: {
+        wavey: {
+          "0%, 100%": {
+            transform: "scaleY(0.5)"
+          },
+          "50%": {
+            transform: "scaleY(1.5)"
+          }
+        }
+      },
+      animation: {
+        wavey: "wavey 1s linear infinite"
+      }
+    },
+  },
+  plugins: [
+    require("./plugins/openVariant"), 
+    require("./plugins/animationDelay"), 
+    require("./plugins/tableCaption"), 
+    require("./plugins/buttonPlugin"), ],
+}
+
